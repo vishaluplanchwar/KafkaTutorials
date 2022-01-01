@@ -1,0 +1,11 @@
+{
+  "name": "stock-trade-data-source-connector",
+  "config": {
+   "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+    "kafka.topic": "stock-trade-data",
+    "quickstart": "Stock_Trades",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://localhost:8081"
+  }
+}

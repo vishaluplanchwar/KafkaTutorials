@@ -1,0 +1,26 @@
+{
+  "name": "payment-details-jdbc-sink-connector-v1",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "task.max": "1",
+    "topics": "money-transfer-data-v1",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "transforms": "Flatten,RenameFields",
+    "transforms.Flatten.type":"org.apache.kafka.connect.transforms.Flatten$Value",
+    "transforms.Flatten.delimiter":"_",
+    "transforms.RenameFields.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+    "transforms.RenameFields.renames": "SENDER_NAME:SENDER_NAME,RECEIVER_NAME:BENEFICIARY_NAME,SENDER_ACCT:SENDER_ACCT,RECEIVER_ACCT:BENEFICIARY_ACCT,AMOUNT:TRANSFERRED_AMOUNT,SENDER_BANK:SENDER_BANK,RECEIVER_BANK:BENEFICIARY_BANK,TXN_ID:TRANSACTION_ID,TXN_DATE:TRANSACTION_DATE",
+    "connection.url": "jdbc:mysql://remotemysql.com:3306/zflFjRYUAl",
+    "connection.user": "zflFjRYUAl",
+    "connection.password": "tlkLkKfM0a",
+    "insert.mode": "upsert",
+    "batch.size": "2",
+    "table.name.format": "zflFjRYUAl.payment_transfer_details",
+    "pk.mode": "record_value",
+    "pk.fields": "TRANSACTION_ID",
+    "db.timezone": "Asia/Kolkata"
+  }
+}

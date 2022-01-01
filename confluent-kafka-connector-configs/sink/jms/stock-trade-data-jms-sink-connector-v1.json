@@ -1,0 +1,17 @@
+{
+  "name": "stock-trade-data-jms-sink-connector-v1",
+  "config": {
+    "connector.class": "io.confluent.connect.jms.JmsSinkConnector",
+    "task.max": 1,
+    "topics": "",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "java.naming.provider.url": "tcp://localhost:61616",
+    "java.naming.factory.initial": "org.apache.activemq.jndi.ActiveMQInitialContextFactory",
+    "jms.destination.type": "queue",
+    "jms.destination.name": "",
+    "jms.forward.kafka.key": true
+  }
+}

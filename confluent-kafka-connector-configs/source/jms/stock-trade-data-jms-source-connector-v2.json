@@ -1,0 +1,22 @@
+{
+  "name": "stock-trade-data-jms-source-connector-v2",
+  "config": {
+    "connector.class": "io.confluent.connect.jms.JmsSourceConnector",
+    "task.max": 1,
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+
+    "java.naming.provider.url": "tcp://localhost:61616",
+    "java.naming.factory.initial": "org.apache.activemq.jndi.ActiveMQInitialContextFactory",
+    "jms.destination.type": "queue",
+    "jms.destination.name": "stock.trade.queue.v2",
+    "batch.size": "5",
+    "max.poll.duration": "60000",
+    "kafka.topic": "stock.trading.data.v2"
+  }
+}
+
+
+

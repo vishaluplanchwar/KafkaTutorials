@@ -1,0 +1,31 @@
+{
+  "name": "money-transfer-data-jdbc-source-connector-v1",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "task.max": "1",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "transforms": "createKey,setSchema",
+    "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+    "transforms.createKey.fields": "TXN_ID,TXN_DATE",
+    "transforms.setSchema.type": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+    "transforms.setSchema.schema.name": "MoneyTransferRecords",
+    "connection.url": "jdbc:mysql://db4free.net:3306/kafkaconnect",
+    "connection.user": "kafka21",
+    "connection.password": "Kafka@123",
+    "dialect.name": "MySqlDatabaseDialect",
+    "mode": "timestamp+incrementing",
+    "timestamp.column.name": "TXN_DATE",
+    "incrementing.column.name": "TXN_ID",
+    "numeric.precision.mapping": true,
+    "numeric.mapping": "best_fit",
+    "query": "SELECT * FROM (SELECT SENDER_NAME,RECEIVER_NAME,SENDER_ACCT,RECEIVER_ACCT,AMOUNT,SENDER_BANK,RECEIVER_BANK,TXN_ID,TXN_DATE FROM kafkaconnect.money_transfer_data) AS MONEY_TRANSFER_DATA",
+    "table.type": "TABLE",
+    "poll.interval.ms": "5000",
+    "batch.max.rows": "5",
+    "topic.prefix": "money-transfer-data-v1",
+    "db.timezome": "Asia/Kolkata"
+  }
+}
