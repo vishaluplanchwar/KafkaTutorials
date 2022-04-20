@@ -1,0 +1,33 @@
+server:
+  port: 9081
+
+spring:
+  kafka:
+    bootstrap-servers: "172.25.10.132:9092"
+    producer:
+      keySerializer: "org.apache.kafka.common.serialization.StringSerializer"
+      valueSerializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://172.25.10.132:8081"
+    consumer:
+      group-id: "spring-boot-avro-consumer-id"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      autoOffsetReset: "earliest"
+      properties:
+        schema:
+          registry:
+            url: "http://172.25.10.132:8081"
+        specific:
+          avro:
+            reader: "true"
+
+
+
+avro:
+  topic:
+    name: "spring.boot.stock.history.avro.topic.v1"
+
+

@@ -1,0 +1,41 @@
+{
+    "type": "record",
+    "name": "StockHistory",
+    "namespace": "com.vishaluplanch.avro.schema",
+    "fields": [
+    {
+        "name": "tradeId",
+        "type": "int",
+        "default": -1
+    },
+    {
+        "name": "tradeQuantity",
+        "type": "int",
+        "default": -1
+    },
+    {
+        "name": "tradeMarket",
+        "type": ["null","string"],
+        "default": null
+    },
+    {
+        "name": "stockName",
+        "type": ["null","string"],
+        "default": null
+    },
+    {
+        "name": "tradeType",
+        "type": ["null","string"],
+        "default": null
+    },
+    {
+        "name": "price",
+        "type": "float",
+        "default": -100.00
+    },
+    {
+        "name": "amount",
+        "type": "float",
+        "default": -100.00
+    }]
+}
