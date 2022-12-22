@@ -1,0 +1,49 @@
+{
+  "type": "record",
+  "name": "EmploymentEnrichedDetail",
+  "namespace": "com.vishaluplanch.org.schemas",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "middleName",
+      "type": "string"
+    },
+    {
+      "name": "employmentType",
+      "type": "string"
+    },
+    {
+      "name": "inHandSalary",
+      "type": {
+        "type": "string",
+        "java-class": "java.math.BigDecimal"
+      }
+    },
+    {
+      "name": "location",
+      "type": "string"
+    },
+    {
+      "name": "netSalary",
+      "type": {
+        "type": "string",
+        "java-class": "java.math.BigDecimal"
+      }
+    },
+    {
+      "name": "organizationName",
+      "type": "string"
+    },
+    {
+      "name": "position",
+      "type": "string"
+    }
+  ]
+}

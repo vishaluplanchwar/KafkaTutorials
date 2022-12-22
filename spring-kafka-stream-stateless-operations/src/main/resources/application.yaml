@@ -1,0 +1,25 @@
+server:
+  port: 9095
+
+spring:
+  kafka:
+    bootstrap-servers: "172.22.128.48:9092"
+    producer:
+      keySerializer: "org.apache.kafka.common.serialization.LongSerializer"
+      valueSerializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://172.22.128.48:8081"
+    streams:
+      bootstrap-servers: "172.22.128.48:9092"
+      application-id: "spring-kafka-stream-stateless-operations-13"
+
+
+schema:
+  registry:
+    url: "http://172.22.128.48:8081"
+
+input:
+  topic:
+    name: "match.summary.input.topic.v1"

@@ -1,0 +1,87 @@
+{
+  "type": "record",
+  "name": "MatchSummary",
+  "namespace": "com.vishaluplanch.kafka.schemas",
+  "fields": [
+    {
+      "name": "Team1",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "Team2",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "location",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "matchDate",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "matchNum",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "result",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "stadium",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "team1Scores",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Score",
+          "fields": [
+            {
+              "name": "PlayerName",
+              "type": ["null","string"],
+              "default": null
+            },
+            {
+              "name": "ballsPlayed",
+              "type": "long",
+              "default": -1
+            },
+            {
+              "name": "run",
+              "type": "long",
+              "default": -1
+            }
+          ]
+        },
+        "java-class": "java.util.List",
+        "default": null
+      },
+      "default": null
+    },
+    {
+      "name": "team2Scores",
+      "type": {
+        "type": "array",
+        "items": "Score",
+        "java-class": "java.util.List",
+        "default": null
+      },
+      "default": null
+    },
+    {
+      "name": "winner",
+      "type": ["null","string"],
+      "default": null
+    }
+  ]
+}

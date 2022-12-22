@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "name": "CollateralEnrichedDetail",
+  "namespace": "com.vishaluplanch.org.schemas",
+  "fields": [
+    {
+      "name": "collateralDesc",
+      "type": "string"
+    },
+    {
+      "name": "collateralId",
+      "type": "long"
+    },
+    {
+      "name": "collateralType",
+      "type": "string"
+    },
+    {
+      "name": "collateralValue",
+      "type": {
+        "type": "string",
+        "java-class": "java.math.BigDecimal"
+      }
+    },
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "middleName",
+      "type": "string"
+    },
+    {
+      "name": "approvedLoanAmount",
+      "type": {
+        "type": "string",
+        "java-class": "java.math.BigDecimal"
+      }
+    },
+    {
+      "name": "loanId",
+      "type": "long"
+    },
+    {
+      "name": "loanAccountNum",
+      "type": "long"
+    },
+    {
+      "name": "loanApprovalDate",
+      "type": "string"
+    }
+  ]
+}
