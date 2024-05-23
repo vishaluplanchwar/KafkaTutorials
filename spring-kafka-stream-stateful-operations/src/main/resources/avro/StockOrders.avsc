@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "StockOrders",
+  "namespace": "com.vishaluplanch.kafka.avro.schema",
+  "fields": [
+    {
+      "name": "stockId",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "orderQuantity",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "orderPrice",
+      "type": "double",
+      "default": 0.0
+    },
+    {
+      "name": "totalOrderAmount",
+      "type": "double",
+      "default": 0.0
+    },
+    {
+      "name": "stockName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "orderType",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "exchange",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}

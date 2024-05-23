@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "StockPriceSumAndCount",
+  "namespace": "com.vishaluplanch.kafka.avro.schema",
+  "fields": [
+    {
+      "name": "count",
+      "type": "long",
+      "default": 0
+    },
+    {
+      "name": "sum",
+      "type": "double",
+      "default": 0.0
+    }
+  ]
+}

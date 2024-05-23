@@ -1,0 +1,54 @@
+{
+  "type": "record",
+  "name": "AccountDetail",
+  "namespace": "com.vishaluplanch.kafka.avro.schema",
+  "fields": [
+    {
+      "name": "customerUniqueIdentification",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "accountNumber",
+      "type": "int",
+      "default": -1
+    },
+    {
+      "name": "currentBalance",
+      "type": "double",
+      "default": 0.0
+    },
+    {
+      "name": "accountHolderName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "branchCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "micrCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}

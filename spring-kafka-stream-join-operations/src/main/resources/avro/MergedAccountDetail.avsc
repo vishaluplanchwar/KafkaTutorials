@@ -1,0 +1,62 @@
+{
+  "type": "record",
+  "name": "MergedAccountDetail",
+  "namespace": "com.vishaluplanch.kafka.avro.schema",
+  "fields": [
+    {
+      "name": "customerUniqueIdentification",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "newAccountNumber",
+      "type": "int",
+      "default": -1
+    },
+    {
+      "name": "currentBalance",
+      "type": "double",
+      "default": 0.0
+    },
+    {
+      "name": "accountHolderName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "newBankName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "newBranchCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "newMicrCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}
